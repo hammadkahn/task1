@@ -113,15 +113,28 @@ class _LoginState extends State<Login> {
 
   login(email, password) {
     getUserApi().then((value) {
-      for (int i = 0; i < 1; i++) {
-        if (email == value[i].email && password == value[i].email) {
-          print(_globalService.email.toString());
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Appbar_custom()));
-        } else {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text('Please enter correct email and password')));
+      if (passwordController.text.isNotEmpty &&
+          emailController.text.isNotEmpty) {
+        for (int i = 0; i < 10; i++) {
+          if (email == value[i].email && password == value[i].email) {
+            print(_globalService.email.toString());
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Appbar_custom()));
+          } else if (email == value[i].email && password != value[i].email) {
+            ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Please enter correct Password')));
+          } else if (email != value[i].email && password == value[i].email) {
+            ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Please enter correct Email')));
+          }
+          // else {
+          //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          //       content: Text('Please enter correct email and password')));
+          // }
         }
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Please enter email and password')));
       }
     });
 

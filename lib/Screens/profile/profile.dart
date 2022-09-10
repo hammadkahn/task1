@@ -55,7 +55,96 @@ class Profile extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(postlist1[index].email.toString()),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('Name',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                      Text(postlist1[index].name.toString()),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Divider(
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('Username',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                      Text(
+                                          postlist1[index].username.toString()),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Divider(
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text('Address',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                      Spacer(),
+                                      Text(postlist1[index]
+                                              .address!
+                                              .street
+                                              .toString() +
+                                          ","),
+                                      Text(postlist1[index]
+                                              .address!
+                                              .suite
+                                              .toString() +
+                                          ","),
+                                      Text(postlist1[index]
+                                          .address!
+                                          .city
+                                          .toString()),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Divider(
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('Zipcode',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                      Text(postlist1[index]
+                                          .address!
+                                          .zipcode
+                                          .toString()),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
                                   Divider(
                                     color: Colors.black,
                                   ),

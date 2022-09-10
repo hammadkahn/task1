@@ -56,6 +56,10 @@ class AllPosts extends StatelessWidget {
                                 children: [
                                   Text(postlist[index].title.toString(),
                                       style: TextStyle(
+                                          color: postlist[index].id ==
+                                                  postlist1[0].id
+                                              ? Color(0xffE43228)
+                                              : Colors.black,
                                           fontWeight: postlist[index].id ==
                                                   postlist1[0].id
                                               ? FontWeight.bold
